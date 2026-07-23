@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juniors | By StrideX</title>
+    <link rel="stylesheet" href="new junior.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1 class="logo">Stride<span>X</span></h1>
+            <ul class="nav-links">
+                <li><a href="Stridex.html">Home</a></li>
+                <li><a href="Stridex.html#Categories">Categories</a></li>
+                <li><a href="New Arrivals.html">New Arrivals</a></li>
+                <li><a href="Stridex.html#About Us">About Us</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section id="Home" class="hero">
+        <div class="hero-content">
+            <h2 style="font-family:'Times New Roman', Times, serif;">StrideX</h2>
+            <h1 style="font-family:'Times New Roman', Times, serif;">Juniors - Where Little Styles Shine</h1>
+            <p style="font-family:'Times New Roman', Times, serif;">Bright, playful, and made for every adventure.
+                Discover comfortable and stylish fashion for growing kids.</p>
+            <a href="#products" class="cta-button" style="font-family:'Times New Roman', Times, serif;">Explore</a>
+        </div>
+        </div>
+
+
+
+        /* --- Products Section --- */
+        .products {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 5%;
+        text-align: center;
+        scroll-margin-top: 70px;
+        }
+
+        html {
+        scroll-behavior: smooth;
+        }
+
+
+        .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2.5rem;
+        }
+
+        .card {
+        background: rgb(74, 74, 118);
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 4px 6px #5b5e87;
+        transition: transform 0.3s;
+        }
+
+        .card:hover {
+        transform: translateY(-8px);
+        }
+
+        .card-img {
+        width: 100%;
+        height: auto;
+        /* Lets the height change based on the image size */
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        }

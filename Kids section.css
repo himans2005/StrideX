@@ -1,0 +1,386 @@
+:root {
+    --primary-color: #6b047d;
+    --text-color: #ffffff;
+    --bg-light: #c9def4;
+}
+
+/*--- Base Styles---*/
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/*--- Navigation---*/
+header {
+    background: linear-gradient(135deg, #becad5, #4d7fca);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    /* Pins the logo 5% away from the left edge of the screen */
+}
+
+.logo {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Navigation Dropdown --- */
+.dropdown {
+    position: relative;
+}
+
+/* Hide the trigger checkbox */
+.dropdown-checkbox {
+    display: none;
+}
+
+/* Style the label dropdown trigger */
+.dropdown-toggle {
+    cursor: pointer;
+    user-select: none;
+}
+
+.dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #111124;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    list-style: none;
+    min-width: 180px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown:hover {
+    color: var(--bg-light);
+}
+
+/* Show when checkbox is checked */
+.dropdown-checkbox:checked~.dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.6rem 1.5rem;
+    color: var(--text-dark) !important;
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-align: left;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-item:hover {
+    color: var(--accent-color) !important;
+    color: var(--bg-light);
+}
+
+.dropdown-toggle::after {
+    content: " ▾";
+    font-size: 0.75rem;
+    margin-left: 0.35rem;
+    vertical-align: middle;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+
+/* Rotate when checkbox is checked */
+.dropdown-checkbox:checked~.dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 8rem 1rem;
+    min-height: 85vh;
+    /* <-- Add this: sets minimum height to 65% of viewport height */
+    display: flex;
+    /* <-- Add this: enables alignment tools */
+    align-items: center;
+    /* <-- Add this: centers the content vertically */
+    justify-content: center;
+    /* <-- Add this: centers the content horizontally */
+    overflow: hidden;
+    background-color: var(--bg-light);
+    color: rgb(244, 244, 244);
+}
+
+.hero-content {
+    position: relative;
+    /* 1. Ensures content stays above the overlay */
+    z-index: 3
+        /* 2. Pushes text and buttons forward */
+}
+
+.background-video {
+    position: absolute;
+    /* Relative to .hero */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    z-index: 1;
+    /* Base layer */
+}
+
+/* Semi-transparent overlay settings */
+.video-overlay {
+    position: absolute;
+    /* Relative to .hero */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 2;
+    /* Sits on top of the video */
+}
+
+.cta-button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.8rem 2.5rem;
+    margin-top: 1.5rem;
+    background-color: #f4f7f8;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    background-color: #4444444d;
+}
+
+/*--Kids Section--*/
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #91b1dd;
+}
+
+.kids-category {
+    padding: 80px 8%;
+}
+
+.section-title {
+
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #1a2a3a;
+    letter-spacing: -0.5px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.card {
+    border-radius: 24px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:nth-child(1) {
+    background: #D9F3FF;
+}
+
+.card:nth-child(2) {
+    background: #FFD9D9;
+}
+
+.card:nth-child(3) {
+    background: #D9FFF5;
+}
+
+.card:nth-child(4) {
+    background: #FFF4D9;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Image wrapper to crop and control image zoom */
+.card-img-wrapper {
+    width: auto;
+    height: auto;
+    /* Increased height to better fit vertical portrait photos */
+    border-radius: 16px;
+    overflow: visible;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+    border-radius: 16px;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Specific adjustment for centered vector graphics */
+.card.school-supplies img {
+    object-position: center;
+    /* Keeps centered vector illustration perfectly aligned */
+}
+
+.card:hover img {
+    transform: scale(1.06);
+}
+
+/* Card Content Area styling */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 18px 6px 6px 6px;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1c2833;
+    margin: 0 0 8px 0;
+    line-height: 1.25;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #4a5768;
+    margin: 0 0 20px 0;
+    line-height: 1.45;
+    flex-grow: 1;
+}
+
+/* Premium Card CTA Button Styling */
+.card .cta-button {
+
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.7rem 1.6rem;
+    margin-top: auto;
+    background-color: #ffffff;
+    color: #1a2a3a;
+    border: none;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    align-self: center;
+}
+
+.card .cta-button:hover {
+    background-color: #1a2a3a;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(26, 42, 58, 0.2);
+}
+
+/* Tablet */
+@media(max-width:992px) {
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Mobile */
+@media(max-width:576px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        text-align: center;
+    }
+
+    .card .cta-button {
+        align-self: center;
+    }
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    margin-top: 3rem;
+}

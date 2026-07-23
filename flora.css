@@ -1,0 +1,162 @@
+        :root {
+            --primary-color: #e22777;
+            --text-color: #000000;
+            --bg-light: #f3d8e4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* --- navigation ---*/
+        header {
+            background: linear-gradient(135deg, #ede3e7, #ee80b1);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+        }
+
+        .logo {
+            color: var(--text-color);
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 8rem 1rem;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-color), #16213e);
+            color: rgb(244, 244, 244);
+        }
+
+        .hero-content {
+            position: relative;
+            /* 1. Ensures content stays above the overlay */
+            z-index: 3;
+            /* 2. Pushes text and buttons forward */
+        }
+
+        .background-video {
+            position: absolute;
+            /* Relative to .hero */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            /* Keeps the top of the video (heads/faces) visible */
+            z-index: 1;
+            /* Base layer */
+        }
+
+        /* Semi-transparent overlay settings */
+        .video-overlay {
+            position: absolute;
+            /* Relative to .hero */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 2;
+            /* Sits on top of the video */
+        }
+
+        .cta-button {
+            display: inline-block;
+            text-decoration: none;
+            padding: 0.8rem 2.5rem;
+            margin-top: 1.5rem;
+            background-color: #f4f7f8;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            background-color: #4444444d;
+        }
+
+        /* --- Products Section --- */
+        .products {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 5%;
+            text-align: center;
+            scroll-margin-top: 70px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .card {
+            background: rgb(74, 74, 118);
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 4px 6px #5b5e87;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: auto;
+            /* Lets the height change based on the image size */
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }

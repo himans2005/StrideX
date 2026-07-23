@@ -1,0 +1,393 @@
+ /* --- Variables for easy editing --- */
+ :root {
+     --primary-color: #01010f;
+     --accent-color: #e94560;
+     --bg-light: #000010;
+     --text-dark: #fbf0f0;
+ }
+
+ /* --- Base Styles --- */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ body {
+     background-color: var(--bg-light);
+     color: var(--text-dark);
+     line-height: 1.6;
+ }
+
+ /* --- Navigation --- */
+ header {
+     background: linear-gradient(135deg, var(--primary-color), #9f599f79);
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+     position: sticky;
+     top: 0;
+     z-index: 1000;
+ }
+
+ nav {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1.5rem 5%;
+     /* Pins the logo 5% away from the left edge of the screen */
+ }
+
+
+ .logo {
+     color: var(--text-dark);
+     font-size: 1.8rem;
+     letter-spacing: 1px;
+ }
+
+ .nav-links {
+     list-style: none;
+     display: flex;
+     gap: 2rem;
+ }
+
+ .nav-links a {
+     text-decoration: none;
+     color: var(--text-dark);
+     font-weight: 500;
+     transition: color 0.3s ease;
+ }
+
+ .nav-links a:hover {
+     color: var(--bg-light);
+ }
+
+ /* --- Navigation Dropdown --- */
+ .dropdown {
+     position: relative;
+ }
+
+ /* Hide the trigger checkbox */
+ .dropdown-checkbox {
+     display: none;
+ }
+
+ /* Style the label dropdown trigger */
+ .dropdown-toggle {
+     cursor: pointer;
+     user-select: none;
+ }
+
+ .dropdown-menu {
+     display: block;
+     position: absolute;
+     top: 100%;
+     left: 0;
+     background: #111124;
+     border: 1px solid rgba(255, 255, 255, 0.1);
+     border-radius: 8px;
+     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+     list-style: none;
+     min-width: 180px;
+     padding: 0.5rem 0;
+     margin-top: 0.5rem;
+     z-index: 1000;
+     opacity: 0;
+     visibility: hidden;
+     transform: translateY(10px);
+     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ .dropdown:hover {
+     color: var(--bg-light);
+ }
+
+ /* Show when checkbox is checked */
+ .dropdown-checkbox:checked~.dropdown-menu {
+     opacity: 1;
+     visibility: visible;
+     transform: translateY(0);
+ }
+
+ .dropdown-item {
+     display: block;
+     width: 100%;
+     padding: 0.6rem 1.5rem;
+     color: var(--text-dark) !important;
+     text-decoration: none;
+     font-size: 0.95rem;
+     text-align: left;
+     transition: background-color 0.2s, color 0.2s;
+ }
+
+ .dropdown-item:hover {
+     color: var(--accent-color) !important;
+     color: var(--bg-light);
+ }
+
+ .dropdown-toggle::after {
+     content: " ▾";
+     font-size: 0.75rem;
+     margin-left: 0.35rem;
+     vertical-align: middle;
+     display: inline-block;
+     transition: transform 0.3s ease;
+ }
+
+ /* Rotate when checkbox is checked */
+ .dropdown-checkbox:checked~.dropdown-toggle::after {
+     transform: rotate(180deg);
+ }
+
+ /* --- Hero Section --- */
+ .hero {
+     text-align: center;
+     padding: 6rem 1rem;
+     background: linear-gradient(135deg, var(--primary-color), #16213e);
+     color: rgb(244, 244, 244);
+ }
+
+ .hero h2 {
+     font-size: 2.8rem;
+     margin-bottom: 1rem;
+ }
+
+ .cta-button {
+     padding: 0.8rem 2.5rem;
+     margin-top: 1.5rem;
+     background-color: #544e8f;
+     color: white;
+     border: none;
+     border-radius: 30px;
+     font-size: 1.1rem;
+     cursor: pointer;
+     transition: transform 0.2s, background-color 0.2s;
+ }
+
+ .cta-button:hover {
+     transform: translateY(-3px);
+     background-color: #4e658f;
+ }
+
+ /* --- Categories Section --- */
+ .categories-section {
+     max-width: 1200px;
+     margin: 3rem auto 1rem auto;
+     padding: 0 5%;
+ }
+
+ .categories-container {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 1.5rem;
+     overflow-x: auto;
+     padding: 1rem 0.5rem;
+     /* Hide scrollbar for a clean look but keep scroll functionality */
+     scrollbar-width: none;
+     /* Firefox */
+ }
+
+ .categories-container::-webkit-scrollbar {
+     display: none;
+     /* Chrome, Safari, Opera */
+ }
+
+ .category-item {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-decoration: none;
+     flex-shrink: 0;
+     cursor: pointer;
+     transition: transform 0.3s ease;
+ }
+
+ .category-img-wrapper {
+     width: 90px;
+     height: 90px;
+     border-radius: 12px;
+     /* Rounded corners matching your image */
+     overflow: hidden;
+     border: 2px solid rgba(255, 255, 255, 0.1);
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+     transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .category-img-wrapper img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.3s ease;
+ }
+
+ .category-label {
+     margin-top: 0.8rem;
+     font-size: 0.95rem;
+     font-weight: 600;
+     color: var(--text-dark);
+     transition: color 0.3s ease;
+     text-align: center;
+ }
+
+ /* Hover Effects */
+ .category-item:hover {
+     transform: translateY(-4px);
+ }
+
+ .category-item:hover .category-img-wrapper {
+     border-color: var(--accent-color);
+     box-shadow: 0 6px 15px rgba(233, 69, 96, 0.4);
+ }
+
+ .category-item:hover .category-img-wrapper img {
+     transform: scale(1.1);
+ }
+
+ .category-item:hover .category-label {
+     color: var(--accent-color);
+ }
+
+ /* --- Products Section --- */
+ .products {
+     max-width: 1200px;
+     margin: 4rem auto;
+     padding: 0 5%;
+     text-align: center;
+ }
+
+ .grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+     gap: 2rem;
+     margin-top: 2.5rem;
+ }
+
+ .card {
+     background: rgb(74, 74, 118);
+     border-radius: 12px;
+     padding: 1rem;
+     box-shadow: 0 4px 6px #5b5e87;
+     transition: transform 0.3s;
+ }
+
+ .card:hover {
+     transform: translateY(-8px);
+ }
+
+ .card-img {
+     width: 100%;
+     height: auto;
+     /* Lets the height change based on the image size */
+     border-radius: 8px;
+     margin-bottom: 1rem;
+ }
+
+ /* --- About Us Section --- */
+ .about-section {
+     max-width: 1200px;
+     margin: 5rem auto;
+     padding: 0 5%;
+     color: var(--text-dark);
+ }
+
+ .about-content {
+     display: flex;
+     align-items: center;
+     gap: 4rem;
+     flex-wrap: wrap;
+     /* Allows it to stack on mobile screens */
+ }
+
+ .about-text {
+     flex: 1;
+     min-width: 300px;
+ }
+
+ .about-text h3 {
+     color: var(--accent-color);
+     font-size: 1rem;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     margin-bottom: 0.5rem;
+ }
+
+ .about-text h2 {
+     font-size: 2.5rem;
+     font-weight: 700;
+     line-height: 1.2;
+     margin-bottom: 1.5rem;
+ }
+
+ .about-text p {
+     color: rgba(251, 240, 240, 0.85);
+     /* Slightly muted text for better reading contrast */
+     font-size: 1.05rem;
+     margin-bottom: 1.2rem;
+     line-height: 1.7;
+ }
+
+ .about-stats {
+     display: flex;
+     gap: 3rem;
+     margin-top: 2rem;
+ }
+
+ .stat-item {
+     display: flex;
+     flex-direction: column;
+ }
+
+ .stat-number {
+     font-size: 2.2rem;
+     font-weight: 800;
+     color: var(--accent-color);
+ }
+
+ .stat-label {
+     font-size: 0.85rem;
+     color: rgba(251, 240, 240, 0.6);
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     margin-top: 0.2rem;
+ }
+
+ .about-image {
+     flex: 1;
+     min-width: 300px;
+     height: auto;
+     border-radius: 20px;
+     overflow: hidden;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+     border: 1px solid rgba(255, 255, 255, 0.1);
+ }
+
+ .about-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.5s ease;
+ }
+
+
+ /* Mobile Responsive View */
+ @media (max-width: 768px) {
+     .about-content {
+         flex-direction: column;
+         gap: 2.5rem;
+     }
+
+     .about-image {
+         width: 100%;
+         height: 300px;
+     }
+ }
+
+
+ /* --- Footer --- */
+ footer {
+     text-align: center;
+     padding: 2rem;
+     background-color: var(--primary-color);
+     color: white;
+     margin-top: 3rem;
+ }
