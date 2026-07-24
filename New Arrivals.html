@@ -5,154 +5,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Arrivals | StrideX</title>
-    <style>
-        /* --- Variables for easy editing --- */
-        :root {
-            --primary-color: #01010f;
-            --accent-color: #e94560;
-            --bg-light: #000010;
-            --text-dark: #fbf0f0;
-        }
-
-        /* --- Base Styles --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* --- Navigation --- */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), #9f599f79);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 5%;
-            /* Pins the logo 5% away from the left edge of the screen */
-        }
-
-
-        .logo {
-            color: var(--text-dark);
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--bg-light);
-        }
-
-
-        /* --- Products Section --- */
-        .products {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 5%;
-            text-align: center;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2.5rem;
-        }
-
-        .card {
-            background: rgb(74, 74, 118);
-            border-radius: 12px;
-            padding: 1rem;
-            box-shadow: 0 4px 6px #5b5e87;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-        }
-
-        .card-img {
-            width: 100%;
-            height: auto;
-            /* Lets the height change based on the image size */
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="new-arrival.css">
 </head>
 
 <body>
     <header>
         <nav>
-            <div class="logo">StrideX</div>
+            <h1 class="logo">StrideX</h1>
             <ul class="nav-links">
                 <li><a href="Stridex.html">Home</a></li>
-                <li><a href="Stridex.html#Categories">Categories</a></li>
-                <li><a href="#New Arrivals">New Arrivals</a></li>
+                <li class="nav-item dropdown">
+                    <input type="checkbox" id="shop-dropdown-toggle" class="dropdown-checkbox">
+                    <label for="shop-dropdown-toggle" class="nav-link dropdown-toggle">Shop</label>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="Kids-section.html">Juniors</a></li>
+                        <li><a class="dropdown-item" href="flora womens section.html">Flora</a></li>
+                        <li><a class="dropdown-item" href="Aurum for men.html">Aurum</a></li>
+                    </ul>
+                </li>
+                <li><a href="New Arrivals.html">New Arrivals</a></li>
                 <li><a href="Stridex.html#About Us">About Us</a></li>
+                <li class="nav-item dropdown">
+                    <input type="checkbox" id="user-dropdown-toggle" class="dropdown-checkbox">
+                    <label for="user-dropdown-toggle" class="nav-link dropdown-toggle">User</label>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="">Log In</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Orders</a></li>
+                        <li><a class="dropdown-item" href="">Log Out</a></li>
+                        <li><a class="dropdown-item" href="">Contact Us</a>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <!--    New Arrivals-section  -->
-    <section id="New Arrivals" class="Products">
-        <h3 style="text-align: center;">New Arrivals</h3>
-        <div class="grid">
-            <div class="card">
-                <!-- "Men OG'30 Sneaker" -->
-                <img class="card-img"
-                    src="https://www.campusshoes.com/cdn/shop/files/OG-30_22G-1249_BLU.BELL_WHT_7.webp?v=1758277054"
-                    alt="Men OG'30 Sneaker">
-                <h4>Men OG'30 Sneaker</h4>
-                <p>₹2,499</p>
-            </div>
+    <!--hero section-->
 
-            <div class="card">
-                <!-- Linen Shirt -->
-                <img class="card-img"
-                    src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500&auto=format&fit=crop&q=80"
-                    alt="Linen Summer Shirt">
-                <h4>Linen Summer Shirt</h4>
-                <p>₹1,299</p>
-            </div>
+    <section id="Home" class="hero">
+        <h2 class="logo" style="font-family: Georgia, 'Times New Roman', Times, serif;">New Arrivals</h2>
+        <h3 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Fresh Styles. Just Dropped
+        </h3>
+        <button class="cta-button" onclick="window.location.href='#new-arrivals'">Shop Now</button>
+    </section>
 
-            <div class="card">
-                <!-- Essentials Tee -->
-                <img class="card-img"
-                    src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&auto=format&fit=crop&q=80"
-                    alt="Cotton Essentials Tee">
-                <h4>Cotton Essentials Tee</h4>
-                <p>₹799</p>
-            </div>
 
+    <!--new-arrival section-->
+    <section class="new-arrival" id="new-arrivals">
+        <h2 class="section-title">
+            Discover new-arrival Collection
+        </h2>
+        <div class="category-container">
+
+
+            <div class="category-grid">
+                <!--card1-->
+                <div class="card boys">
+                    <div class="card-img-wrapper">
+                        <img src="j new arrivals.png" alt="juniors ne Arrival Collection">
+                    </div>
+                    <div class="card-content">
+                        <h3 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">Juniors
+                        </h3>
+                        <p style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">For Kids |
+                            By StrideX</p>
+                        <a href="#" class="cta-button">Shop Now</a>
+                    </div>
+                </div>
+                <!--card2-->
+                <div class="card girls">
+                    <div class="card-img-wrapper">
+                        <img src="f new arrivals.png" alt="Flora New Arrivals">
+                    </div>
+                    <div class="card-content">
+                        <h3 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">Flora
+                        </h3>
+                        <p style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">For Womens
+                            | By StrideX</p>
+                        <a href="#" class="cta-button">Shop Now</a>
+                    </div>
+                </div>
+                <!--card3-->
+                <div class="card school-supplies">
+                    <div class="card-img-wrapper">
+                        <img src="A NEW ARRIVALS.jpg" alt="Aurum new arrivals">
+                    </div>
+                    <div class="card-content">
+                        <h3 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">Aurum
+                        </h3>
+                        <p style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif;">For mens |
+                            By StrideX</p>
+                        <a href="#" class="cta-button">Shop Now</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; Follow us on</p>
+        <div class="social-links">
+            <img style="width: 40px; height:40px" class="logo"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sEZ6sPHMJwV8mAVPbKbKDB-JMMnHM7L8zJ-eOKJP5w&s=10"
+                alt="instagram">
+
+            <img style="width: 40px; height:40px" class="logo"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi4vO2Y-AGLtKgHyDDkLZFFm20amIgrEs2sCVu4K7x3g&s=10"
+                alt="fb">
+
+            <img style="width: 40px; height:40px" class="logo"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5ZtL7bJzQep0IJ_ysqe2ctOpJn7lRzWVYA_qJ8lgdew&s=10"
+                alt="twitter">
+        </div>
+        <p>&copy; 2026 Stridex. All rights reserved.</p>
+    </footer>
 
 
 </body>

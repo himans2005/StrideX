@@ -5,171 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aurum |By StrideX </title>
-
-    <style>
-        :root {
-            --primary-color: #d4af37;
-            --text-color: #f5f5f5;
-            --bg-light: #121212;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* --- navigation ---*/
-        header {
-            background: linear-gradient(135deg, #121121, #2c2c2c);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 5%;
-        }
-
-        .logo {
-            color: var(--text-color);
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .hero {
-            position: relative;
-            text-align: center;
-            padding: 8rem 1rem;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: linear-gradient(135deg, var(--primary-color), #16213e);
-            color: rgb(244, 244, 244);
-        }
-
-        .hero-content {
-            position: relative;
-            /* 1. Ensures content stays above the overlay */
-            z-index: 3;
-            /* 2. Pushes text and buttons forward */
-        }
-
-        .background-video {
-            position: absolute;
-            /* Relative to .hero */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            /* Keeps the top of the video (heads/faces) visible */
-            z-index: 1;
-            /* Base layer */
-        }
-
-        /* Semi-transparent overlay settings */
-        .video-overlay {
-            position: absolute;
-            /* Relative to .hero */
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.45);
-            z-index: 2;
-            /* Sits on top of the video */
-        }
-
-        .cta-button {
-            display: inline-block;
-            text-decoration: none;
-            padding: 0.8rem 2.5rem;
-            margin-top: 1.5rem;
-            background-color: #f4f7f8;
-            color: rgb(0, 0, 0);
-            border: none;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.2s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            background-color: #4444444d;
-        }
-
-        /* --- Products Section --- */
-        .products {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 5%;
-            text-align: center;
-            scroll-margin-top: 70px;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2.5rem;
-        }
-
-        .card {
-            background: rgb(74, 74, 118);
-            border-radius: 12px;
-            padding: 1rem;
-            box-shadow: 0 4px 6px #5b5e87;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-        }
-
-        .card-img {
-            width: 100%;
-            height: auto;
-            /* Lets the height change based on the image size */
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="aurum.css">
 </head>
 
 <body>
@@ -178,9 +14,28 @@
             <div class="logo">StrideX</div>
             <ul class="nav-links">
                 <li><a href="Stridex.html">Home</a></li>
-                <li><a href="Stridex.html#Categories">Categories</a></li>
+                <li class="nav-item dropdown">
+                    <input type="checkbox" id="shop-dropdown-toggle" class="dropdown-checkbox">
+                    <label for="shop-dropdown-toggle" class="nav-link dropdown-toggle">Shop</label>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="Kids-section.html">Juniors</a></li>
+                        <li><a class="dropdown-item" href="flora womens section.html">Flora</a></li>
+                        <li><a class="dropdown-item" href="Aurum for men.html">Aurum</a></li>
+                    </ul>
+                </li>
                 <li><a href="New Arrivals.html">New Arrivals</a></li>
                 <li><a href="Stridex.html#About Us">About Us</a></li>
+                <li class="nav-item dropdown">
+                    <input type="checkbox" id="user-dropdown-toggle" class="dropdown-checkbox">
+                    <label for="user-dropdown-toggle" class="nav-link dropdown-toggle">User</label>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="">Log In</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Orders</a></li>
+                        <li><a class="dropdown-item" href="">Log Out</a></li>
+                        <li><a class="dropdown-item" href="">Contact Us</a>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -189,7 +44,7 @@
         <div class="hero">
             <!-- 1. Put the background video here -->
             <video autoplay muted loop playsinline class="background-video">
-                <source src="flora background video.mp4" type="video/mp4">
+                <source src="aurum video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <!-- 2. Put the dimming overlay here -->
@@ -201,35 +56,89 @@
                 <h2 style="font-family:'Times New Roman', Times, serif;">Aurum - Crafted for Excellence</h2>
                 <p style="font-family:'Times New Roman', Times, serif;">For the man who demands more than just style—he
                     demands excellence. Aurum is where refined design meets bold confidence.</p>
-                <a href="#products" class="cta-button" style="font-family:'Times New Roman', Times, serif;">Explore</a>
+                <a href="#menscategories" class="cta-button"
+                    style="font-family:'Times New Roman', Times, serif;">Explore</a>
             </div>
         </div>
     </section>
 
-    <!--Kids world-->
-    <section id="products" class="products">
-        <h3 style="text-align: center;">Aurum | by Stridex</h3>
-        <div class="grid">
-            <div class="card">
-                <!--School Bag-->
-                <img class="card-img" src="" alt="Jeans">
-                <h4>jeans</h4>
-                <p>₹1,299</p>
-            </div>
-            <div class="card">
-                <!--kids shoes-->
-                <img class="card-img" src="" alt="Shoes">
-                <h4>shoes--</h4>
-                <p>₹700</p>
-            </div>
-            <div class="card">
-                <!--kids dress-->
-                <img class="card-img" src="" alt="Party Dress">
-                <h4>Party Dress</h4>
-                <p>₹800</p>
+    <!--kids section-->
+    <section class="mens-category" id="menscategories">
+        <h2 class="section-title">
+            Discover Men's Collection
+        </h2>
+        <div class="category-container">
+
+
+            <div class="category-grid">
+                <!--card1-->
+                <div class="card boys">
+                    <div class="card-img-wrapper">
+                        <img src="aurumapparel.png" alt="Apparel Collection">
+                    </div>
+                    <div class="card-content">
+                        <h3 style="text-align: center;">Apparel</h3>
+                        <p style="text-align: center;">Fashion crafted for every moment</p>
+                        <a href="#" class="cta-button">Shop Now</a>
+                    </div>
+                </div>
+                <!--card2-->
+                <div class="card girls">
+                    <div class="card-img-wrapper">
+                        <img src="grooming.png" alt="grooming">
+                    </div>
+                    <div class="card-content">
+                        <h3 style="text-align: center;">Grooming</h3>
+                        <p style="text-align: center;">Elevate your daily routine with premium grooming essentials
+                        </p>
+                        <a href="#" class="cta-button">Shop Now</a>
+                    </div>
+                </div>
+                <!--card3-->
+                <div class="card school-supplies">
+                    <div class="card-img-wrapper">
+                        <img src="aurum footwear.png" alt="footwear">
+                    </div>
+                    <div class="card-content">
+                        <h3 style="text-align: center;">Footwear</h3>
+                        <p style="text-align: center;">Walk in style, every step of the way</p>
+                        <a href="#" class="cta-button">Shop Now</a>
+                    </div>
+                </div>
+                <!--card4-->
+                <div class="card toys">
+                    <div class="card-img-wrapper">
+                        <img src="aurum accesories.png" alt="Accessories">
+                    </div>
+                    <div class="card-content">
+                        <h3 style="text-align: center;">Accessories</h3>
+                        <p style="text-align: center;">The perfect finishing touch to your outfit</p>
+                        <a href="#" class="cta-button">Shop Now</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+
+
+    <footer>
+        <p>&copy; Follow us on</p>
+        <div class="social-links">
+            <img style="width: 40px; height:40px" class="logo"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sEZ6sPHMJwV8mAVPbKbKDB-JMMnHM7L8zJ-eOKJP5w&s=10"
+                alt="instagram">
+
+            <img style="width: 40px; height:40px" class="logo"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi4vO2Y-AGLtKgHyDDkLZFFm20amIgrEs2sCVu4K7x3g&s=10"
+                alt="fb">
+
+            <img style="width: 40px; height:40px" class="logo"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5ZtL7bJzQep0IJ_ysqe2ctOpJn7lRzWVYA_qJ8lgdew&s=10"
+                alt="twitter">
+        </div>
+        <p>&copy; 2026 Stridex. All rights reserved.</p>
+    </footer>
 
 </body>
 

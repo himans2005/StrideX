@@ -15,9 +15,28 @@
             <div class="logo">StrideX</div>
             <ul class="nav-links">
                 <li><a href="Stridex.html">Home</a></li>
-                <li><a href="Stridex.html#Categories">Categories</a></li>
+                <li class="nav-item dropdown">
+                    <input type="checkbox" id="shop-dropdown-toggle" class="dropdown-checkbox">
+                    <label for="shop-dropdown-toggle" class="nav-link dropdown-toggle">Shop</label>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="Kids-section.html">Juniors</a></li>
+                        <li><a class="dropdown-item" href="flora womens section.html">Flora</a></li>
+                        <li><a class="dropdown-item" href="Aurum for men.html">Aurum</a></li>
+                    </ul>
+                </li>
                 <li><a href="New Arrivals.html">New Arrivals</a></li>
                 <li><a href="Stridex.html#About Us">About Us</a></li>
+                <li class="nav-item dropdown">
+                    <input type="checkbox" id="user-dropdown-toggle" class="dropdown-checkbox">
+                    <label for="user-dropdown-toggle" class="nav-link dropdown-toggle">User</label>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="">Log In</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Orders</a></li>
+                        <li><a class="dropdown-item" href="">Log Out</a></li>
+                        <li><a class="dropdown-item" href="">Contact Us</a>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -39,35 +58,88 @@
                     themselves through style.</h2>
                 <p style="font-family:'Times New Roman', Times, serif;">Where timeless elegance meets modern style.
                     Explore fashion designed to celebrate confidence, beauty, and individuality.</p>
-                <a href="#products" class="cta-button" style="font-family:'Times New Roman', Times, serif;">Explore</a>
+                <a href="#womenscategories" class="cta-button"
+                    style="font-family:'Times New Roman', Times, serif;">Explore</a>
             </div>
         </div>
     </section>
 
-    <!--Kids world-->
-    <section id="products" class="products">
-        <h3 style="text-align: center;">Flora | by Stridex</h3>
-        <div class="grid">
-            <div class="card">
-                <!--School Bag-->
-                <img class="card-img" src="" alt="Jeans">
-                <h4>jeans</h4>
-                <p>₹1,299</p>
-            </div>
-            <div class="card">
-                <!--kids shoes-->
-                <img class="card-img" src="" alt="Shoes">
-                <h4>shoes--</h4>
-                <p>₹700</p>
-            </div>
-            <div class="card">
-                <!--kids dress-->
-                <img class="card-img" src="" alt="Party Dress">
-                <h4>Party Dress</h4>
-                <p>₹800</p>
+    <!--kids section-->
+    <section class="Womens-category" id="womenscategories">
+        <h2 class="section-title">
+            Discover Women's Collection
+        </h2>
+        <div class="category-container">
+
+
+            <div class="category-grid">
+                <!--card1-->
+                <div class="card boys">
+                    <div class="card-img-wrapper">
+                        <img src="apparel.png" alt="Apparel Collection">
+                    </div>
+                    <div class="card-content">
+                        <h3 style="text-align: center;">Apparel</h3>
+                        <p style="text-align: center;">Fashion crafted for every moment</p>
+                        <a href="#" class="cta-button">Shop Now</a>
+                    </div>
+                </div>
+                <!--card2-->
+                <div class="card girls">
+                    <div class="card-img-wrapper">
+                        <img src="cosmetics.png" alt="Girls Clothing Collection">
+                    </div>
+                    <div class="card-content">
+                        <h3 style="text-align: center;">Beauty & Care</h3>
+                        <p style="text-align: center;">Glow with premium beauty essentials</p>
+                        <a href="#" class="cta-button">Shop Now</a>
+                    </div>
+                </div>
+                <!--card3-->
+                <div class="card school-supplies">
+                    <div class="card-img-wrapper">
+                        <img src="footwear.png" alt="footwear">
+                    </div>
+                    <div class="card-content">
+                        <h3 style="text-align: center;">Footwear</h3>
+                        <p style="text-align: center;">Walk in style, every step of the way</p>
+                        <a href="#" class="cta-button">Shop Now</a>
+                    </div>
+                </div>
+                <!--card4-->
+                <div class="card toys">
+                    <div class="card-img-wrapper">
+                        <img src="accesories.png" alt="Accessories and makeup">
+                    </div>
+                    <div class="card-content">
+                        <h3 style="text-align: center;">Accessories</h3>
+                        <p style="text-align: center;">The perfect finishing touch to your outfit</p>
+                        <a href="#" class="cta-button">Shop Now</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+
+
+    <footer>
+        <p>&copy; Follow us on</p>
+        <div class="social-links">
+            <img style="width: 40px; height:40px" class="logo"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sEZ6sPHMJwV8mAVPbKbKDB-JMMnHM7L8zJ-eOKJP5w&s=10"
+                alt="instagram">
+
+            <img style="width: 40px; height:40px" class="logo"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi4vO2Y-AGLtKgHyDDkLZFFm20amIgrEs2sCVu4K7x3g&s=10"
+                alt="fb">
+
+            <img style="width: 40px; height:40px" class="logo"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5ZtL7bJzQep0IJ_ysqe2ctOpJn7lRzWVYA_qJ8lgdew&s=10"
+                alt="twitter">
+        </div>
+        <p>&copy; 2026 Stridex. All rights reserved.</p>
+    </footer>
 
 </body>
 

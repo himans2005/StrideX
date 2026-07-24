@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
 
         body {
@@ -22,7 +22,7 @@
 
         /* --- Navigation --- */
         header {
-            background: linear-gradient(135deg, var(--primary-color), #9f599f79);
+            background: linear-gradient(135deg, var(--primary-color), #477ab579);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
@@ -117,7 +117,7 @@
             display: block;
             width: 100%;
             padding: 0.6rem 1.5rem;
-            color: var(--text-dark) !important;
+            color: #ffffff;
             text-decoration: none;
             font-size: 0.95rem;
             text-align: left;
@@ -125,8 +125,8 @@
         }
 
         .dropdown-item:hover {
-            color: var(--accent-color) !important;
-            color: var(--bg-light);
+            color: #ee80b1 !important;
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .dropdown-toggle::after {
@@ -148,7 +148,8 @@
         .hero {
             text-align: center;
             padding: 6rem 1rem;
-            background: linear-gradient(135deg, var(--primary-color), #16213e);
+            background-image: url("stidex\ background.jpg");
+            background-color: var(--primary-color);
             color: rgb(244, 244, 244);
         }
 
@@ -179,89 +180,232 @@
         }
 
         /* --- Categories Section --- */
-        .categories-section {
-            max-width: 1200px;
-            margin: 3rem auto 1rem auto;
-            padding: 0 5%;
-            scroll-margin-top: 90px;
+        body {
+            margin: 0;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #011020;
         }
 
-        html {
-            scroll-behavior: smooth;
-            /* <-- Add this: Makes transitions look premium and fluid */
+        .all-categories {
+            padding: 30px 5%;
         }
 
-
-        .categories-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
-            overflow-x: auto;
-            padding: 1rem 0.5rem;
-            /* Hide scrollbar for a clean look but keep scroll functionality */
-            scrollbar-width: none;
-            /* Firefox */
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
         }
 
-        .categories-container::-webkit-scrollbar {
-            display: none;
-            /* Chrome, Safari, Opera */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: 30px auto;
         }
 
-        .category-item {
+        .card {
+            border-radius: 24px;
+            padding: 16px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-decoration: none;
-            flex-shrink: 0;
+            justify-content: flex-start;
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .category-img-wrapper {
-            width: 90px;
-            height: 90px;
-            border-radius: 12px;
-            /* Rounded corners matching your image */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            position: relative;
             overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #000000;
         }
 
-        .category-img-wrapper img {
+        /* Image wrapper to crop and control image zoom */
+        .card-img-wrapper {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        }
+
+        .card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            display: block;
+            border-radius: 18px;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .category-label {
-            margin-top: 0.8rem;
+        /* Specific adjustment for centered vector graphics */
+        .card.school-supplies img {
+            object-position: center;
+            /* Keeps centered vector illustration perfectly aligned */
+        }
+
+        .card:hover img {
+            transform: scale(1.06);
+        }
+
+        /* Card Content Area styling */
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 18px 6px 6px 6px;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 8px 0;
+            line-height: 1.25;
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            color: oklab(100% 0 -0.00011);
+            margin: 0 0 20px 0;
+            line-height: 1.45;
+            flex-grow: 1;
+        }
+
+        /* Premium Card CTA Button Styling */
+        .card .cta-button {
+
+            display: inline-block;
+            text-decoration: none;
+            padding: 0.7rem 1.6rem;
+            margin-top: auto;
+            background-color: #ffffff;
+            color: #1a2a3a;
+            border: none;
+            border-radius: 30px;
             font-size: 0.95rem;
             font-weight: 600;
-            color: var(--text-dark);
-            transition: color 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+            align-self: center;
+        }
+
+        .card .cta-button:hover {
+            background-color: #1a2a3a;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(26, 42, 58, 0.2);
+        }
+
+        /* Tablet */
+        @media(max-width:992px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* Mobile */
+        @media(max-width:576px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .card {
+                text-align: center;
+            }
+
+            .card .cta-button {
+                align-self: center;
+            }
+        }
+
+
+        /* WHY CHOOSE STRIDEX */
+
+        .why-stridex {
+            width: 100%;
+            padding: 90px 8%;
+            background: #000010;
+            color: #fff;
             text-align: center;
         }
 
-        /* Hover Effects */
-        .category-item:hover {
-            transform: translateY(-4px);
+        .why-stridex h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
 
-        .category-item:hover .category-img-wrapper {
-            border-color: var(--accent-color);
-            box-shadow: 0 6px 15px rgba(233, 69, 96, 0.4);
+        .why-stridex h2 span {
+            color: #e94560;
         }
 
-        .category-item:hover .category-img-wrapper img {
-            transform: scale(1.1);
+        .subtitle {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            color: #bdbdbd;
+            font-size: 18px;
+            line-height: 1.6;
         }
 
-        .category-item:hover .category-label {
-            color: var(--accent-color);
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #12121d;
+            padding: 35px 30px;
+            border-radius: 18px;
+            transition: .4s;
+            border: 1px solid rgba(255, 255, 255, .08);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #e94560;
+            box-shadow: 0 20px 40px rgba(233, 69, 96, .25);
+        }
+
+        .feature-card i {
+            font-size: 50px;
+            color: #e94560;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #cfcfcf;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Responsive */
+        @media(max-width:768px) {
+
+            .why-stridex {
+                padding: 70px 6%;
+            }
+
+            .why-stridex h2 {
+                font-size: 34px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
         }
 
         /* --- About Us Section --- */
@@ -337,7 +481,8 @@
         .about-image {
             flex: 1;
             min-width: 300px;
-            height: auto;
+            max-width: 450px;
+            align-self: center;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -347,7 +492,9 @@
         .about-image img {
             width: 100%;
             height: 100%;
+            display: block;
             object-fit: cover;
+            border-radius: 20px;
             transition: transform 0.5s ease;
         }
 

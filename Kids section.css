@@ -1,7 +1,8 @@
 :root {
-    --primary-color: #6b047d;
-    --text-color: #ffffff;
-    --bg-light: #c9def4;
+    --primary-color: #01010f;
+    --accent-color: #e94560;
+    --bg-light: #000010;
+    --text-dark: #fbf0f0;
 }
 
 /*--- Base Styles---*/
@@ -13,7 +14,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 body {
@@ -52,16 +53,19 @@ nav {
 
 }
 
-.nav-links a {
+.nav-links a,
+.dropdown-toggle {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.dropdown-toggle:hover {
     color: var(--primary-color);
 }
+
 
 /* --- Navigation Dropdown --- */
 .dropdown {
@@ -114,7 +118,7 @@ nav {
     display: block;
     width: 100%;
     padding: 0.6rem 1.5rem;
-    color: var(--text-dark) !important;
+    color: #ffffff !important;
     text-decoration: none;
     font-size: 0.95rem;
     text-align: left;
@@ -122,8 +126,8 @@ nav {
 }
 
 .dropdown-item:hover {
-    color: var(--accent-color) !important;
-    color: var(--bg-light);
+    color: #f3d8e4 !important;
+    background-color: rgba(177, 177, 177, 0.1);
 }
 
 .dropdown-toggle::after {
@@ -144,8 +148,8 @@ nav {
 .hero {
     position: relative;
     text-align: center;
-    padding: 8rem 1rem;
-    min-height: 85vh;
+    padding: 5rem 1rem;
+    min-height: 65vh;
     /* <-- Add this: sets minimum height to 65% of viewport height */
     display: flex;
     /* <-- Add this: enables alignment tools */
@@ -214,19 +218,18 @@ nav {
 body {
     margin: 0;
     font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #91b1dd;
+    background: #a2cbfb;
 }
 
 .kids-category {
-    padding: 80px 8%;
+    padding: 30px 5%;
 }
 
 .section-title {
-
     text-align: center;
-    font-size: 42px;
+    font-size: 38px;
     font-weight: 700;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     color: #1a2a3a;
     letter-spacing: -0.5px;
 }
@@ -234,7 +237,9 @@ body {
 .category-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .card {
@@ -381,6 +386,6 @@ body {
 footer {
     text-align: center;
     padding: 2rem;
-    color: white;
+    color: rgb(0, 0, 0);
     margin-top: 3rem;
 }
