@@ -357,7 +357,35 @@ body {
 /* --- Footer --- */
 footer {
     text-align: center;
-    padding: 2rem;
-    color: rgb(255, 255, 255);
+    padding: 2.5rem 1rem;
+    background-color: #070707;
+    color: white;
     margin-top: 3rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 1.2rem 0;
+}
+
+.social-icons a {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #202020;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: #e63946;
+    transform: translateY(-4px);
 }
