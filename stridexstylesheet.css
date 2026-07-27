@@ -539,7 +539,7 @@
             display: block;
             object-fit: cover;
             border-radius: 20px;
-            ttransition: transform 0.5s ease;
+            transition: transform 0.5s ease;
         }
 
         .about-image:hover img {
