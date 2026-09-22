@@ -461,6 +461,10 @@
 
  /* Mobile Responsive View */
  @media (max-width: 768px) {
+     .navbar {
+         flex-direction: column;
+     }
+
      .about-content {
          flex-direction: column;
          gap: 2.5rem;
