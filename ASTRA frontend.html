@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra — StrideX AI Fashion Studio</title>
+    <link rel="stylesheet" href="ASTRA frontend.css">
+    <script src="ASTRA frontend.js" defer></script>
+    <script type="importmap">
+{
+    "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+    }
+}
+</script>
+    <script type="module" src="astra-3d.js"></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+     HEADER
+===================================================== -->
+
+    <header class="topbar">
+
+        <div class="brand">
+
+            <div class="brand-logo">A</div>
+
+            <div>
+                <div class="brand-name">ASTRA</div>
+                <div class="brand-subtitle">by StrideX</div>
+            </div>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <span class="search-icon">⌕</span>
+
+            <input type="text" id="searchInput" placeholder="Quick search..." autocomplete="off">
+
+            <span class="search-shortcut">⌘ K</span>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button class="icon-button" title="Favorites">
+                ♡
+            </button>
+
+            <button class="icon-button" title="Notifications">
+                ◌
+            </button>
+
+            <div class="profile">
+                H
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+     MAIN APP
+===================================================== -->
+
+    <main class="app-layout">
+
+
+        <!-- =====================================================
+     LEFT SIDEBAR
+===================================================== -->
+
+        <aside class="left-panel">
+
+            <div class="panel-label">
+                LIBRARY
+            </div>
+
+            <div class="library-heading">
+
+                <h2>Build your look</h2>
+
+                <span id="resultCount">
+                    8 items
+                </span>
+
+            </div>
+
+
+            <!-- Categories -->
+
+            <div class="categories">
+
+                <button class="category active" data-category="all">
+                    All
+                </button>
+
+                <button class="category" data-category="tops">
+                    Tops
+                </button>
+
+                <button class="category" data-category="bottoms">
+                    Bottoms
+                </button>
+
+                <button class="category" data-category="shoes">
+                    Shoes
+                </button>
+
+                <button class="category" data-category="outerwear">
+                    Outer
+                </button>
+
+                <button class="category" data-category="accessories">
+                    Acc.
+                </button>
+
+            </div>
+
+
+            <!-- Product Grid -->
+
+            <div class="product-grid" id="productGrid"></div>
+
+
+            <!-- Body Colour -->
+
+            <div class="sidebar-section">
+
+                <div class="section-label">
+                    BODY COLOUR
+                </div>
+
+
+                <div class="avatar-options">
+
+                    <button class="avatar-option active" data-avatar="01" aria-label="Body colour 1">
+                        <span class="mini-avatar skin-1"></span>
+                    </button>
+
+
+                    <button class="avatar-option" data-avatar="02" aria-label="Body colour 2">
+                        <span class="mini-avatar skin-2"></span>
+                    </button>
+
+
+                    <button class="avatar-option" data-avatar="03" aria-label="Body colour 3">
+                        <span class="mini-avatar skin-3"></span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Pose -->
+
+            <div class="sidebar-section">
+
+                <div class="section-label">
+                    POSE
+                </div>
+
+
+                <div class="pose-options">
+
+                    <button class="pose-btn active" data-pose="front">
+                        Front
+                    </button>
+
+                    <button class="pose-btn" data-pose="side">
+                        Side
+                    </button>
+
+                    <button class="pose-btn" data-pose="walk">
+                        Walk
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =====================================================
+     CENTER STUDIO
+===================================================== -->
+
+        <section class="studio">
+
+            <div class="studio-header">
+
+                <div>
+
+                    <div class="studio-label">
+                        ASTRA STUDIO
+                    </div>
+
+                    <h1>
+                        Style your
+                        <em>future self.</em>
+                    </h1>
+
+                </div>
+
+
+                <button class="build-button" id="buildOutfitBtn">
+                    ✦ Build outfit
+                </button>
+
+            </div>
+
+
+            <!-- Current look -->
+
+            <div class="current-look">
+
+                <span>Current look</span>
+
+                <strong id="selectedLookName">
+                    Studio Essentials
+                </strong>
+
+            </div>
+
+
+            <!-- Avatar Preview -->
+
+            <div class="preview-area">
+
+                <div class="preview-heading">
+                    3D real-time preview
+                </div>
+
+
+                <div class="avatar-stage" id="avatarStage">
+
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+                    <div class="orbit orbit-three"></div>
+
+
+                    <!-- Avatar -->
+
+                    <div class="avatar" id="avatar">
+
+                        <!-- Head -->
+
+                        <div class="avatar-head" id="avatarHead">
+
+                            <div class="hair"></div>
+
+                            <div class="ear left"></div>
+                            <div class="ear right"></div>
+
+                        </div>
+
+
+                        <!-- Neck -->
+
+                        <div class="avatar-neck" id="avatarNeck"></div>
+
+
+                        <!-- Body -->
+
+                        <div class="avatar-body" id="avatarBody">
+
+                            <div class="shirt-layer" id="shirtLayer"></div>
+
+                        </div>
+
+
+                        <!-- Left arm -->
+
+                        <div class="avatar-arm arm-left" id="leftArm">
+
+                            <div class="avatar-hand"></div>
+
+                        </div>
+
+
+                        <!-- Right arm -->
+
+                        <div class="avatar-arm arm-right" id="rightArm">
+
+                            <div class="avatar-hand"></div>
+
+                        </div>
+
+
+                        <!-- Left leg -->
+
+                        <div class="avatar-leg leg-left"></div>
+
+
+                        <!-- Right leg -->
+
+                        <div class="avatar-leg leg-right"></div>
+
+
+                        <!-- Shoes -->
+
+                        <div class="avatar-shoe shoe-left"></div>
+
+                        <div class="avatar-shoe shoe-right"></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Preview controls -->
+
+                <div class="preview-controls">
+
+                    <button class="control-button" id="rotateLeft" title="Rotate left">
+                        ↶
+                    </button>
+
+                    <button class="control-button" id="zoomOut" title="Zoom out">
+                        −
+                    </button>
+
+                    <button class="control-button" id="resetView" title="Reset">
+                        ○
+                    </button>
+
+                    <button class="control-button" id="zoomIn" title="Zoom in">
+                        +
+                    </button>
+
+                    <button class="control-button" id="rotateRight" title="Rotate right">
+                        ↷
+                    </button>
+
+                </div>
+
+
+                <div class="preview-status" id="previewStatus">
+                    Front view · 1 item
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+     RIGHT AI PANEL
+===================================================== -->
+
+        <aside class="right-panel">
+
+            <div class="ai-header">
+
+                <div class="ai-icon">
+                    ✦
+                </div>
+
+                <div>
+
+                    <div class="panel-label">
+                        PERSONAL STYLIST
+                    </div>
+
+                    <h2>
+                        Astra AI
+                    </h2>
+
+                </div>
+
+                <div class="online">
+                    <span></span>
+                    Online
+                </div>
+
+            </div>
+
+
+            <div class="ai-intro">
+
+                <p class="small-text">
+                    Hi there,
+                </p>
+
+                <h2>
+                    Let's find your
+                    <em>next look.</em>
+                </h2>
+
+                <p>
+                    Tell Astra what you're dressing for,
+                    or choose a recommendation below.
+                </p>
+
+            </div>
+
+
+            <!-- Recommendation -->
+
+            <div class="recommendation-card">
+
+                <div class="recommendation-header">
+
+                    <span>
+                        ✦ RECOMMENDED FOR YOU
+                    </span>
+
+                    <button id="refreshRecommendation" title="Refresh">
+                        ↻
+                    </button>
+
+                </div>
+
+
+                <p id="recommendationText">
+                    A clean black top, relaxed denim
+                    and white sneakers create an
+                    effortless everyday look.
+                </p>
+
+
+                <div class="recommendation-products" id="recommendationProducts"></div>
+
+            </div>
+
+
+            <!-- Chat -->
+
+            <div class="chat-messages" id="chatMessages">
+
+                <div class="chat-message ai-message">
+
+                    <div class="chat-avatar">
+                        ✦
+                    </div>
+
+                    <div>
+                        <p>
+                            Tell me what you're looking
+                            for and I'll help you build
+                            a StrideX look.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quick prompts -->
+
+            <div class="quick-prompts">
+
+                <button data-prompt="Give me a college outfit">
+                    College
+                </button>
+
+                <button data-prompt="Give me a casual outfit">
+                    Casual
+                </button>
+
+                <button data-prompt="Give me a party outfit">
+                    Party
+                </button>
+
+            </div>
+
+
+            <!-- Chat input -->
+
+            <div class="chat-input-area">
+
+                <input type="text" id="chatInput" placeholder="Ask Astra about your outfit..." autocomplete="off">
+
+                <button id="sendChat" title="Send">
+                    ↑
+                </button>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+
+    <!-- =====================================================
+     PRODUCT MODAL
+===================================================== -->
+
+    <div class="modal" id="productModal">
+
+        <div class="modal-box">
+
+            <button class="modal-close" id="modalClose">
+                ×
+            </button>
+
+
+            <div class="modal-product-visual" id="modalVisual">
+                ◇
+            </div>
+
+
+            <div class="modal-content">
+
+                <span class="modal-category" id="modalCategory">
+                    T-Shirt
+                </span>
+
+                <h2 id="modalTitle">
+                    Product
+                </h2>
+
+                <div class="modal-price" id="modalPrice">
+                    ₹999
+                </div>
+
+                <p id="modalDescription">
+                    Product description.
+                </p>
+
+
+                <div class="modal-details">
+
+                    <span id="modalColor">
+                        Color
+                    </span>
+
+                    <span id="modalFit">
+                        Fit
+                    </span>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button class="secondary-button" id="modalAdd">
+                        Add to outfit
+                    </button>
+
+                    <button class="primary-button" id="modalTryOn">
+                        Try on
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+     OUTFIT MODAL
+===================================================== -->
+
+    <div class="modal" id="outfitModal">
+
+        <div class="outfit-box">
+
+            <button class="modal-close" id="outfitClose">
+                ×
+            </button>
+
+            <div class="panel-label">
+                ASTRA AI
+            </div>
+
+            <h2>
+                Build your outfit
+            </h2>
+
+            <p>
+                Choose a style and Astra will
+                create a demo outfit.
+            </p>
+
+
+            <div class="outfit-options">
+
+                <button class="outfit-choice active" data-style="casual">
+                    <strong>Casual</strong>
+                    <span>Relaxed everyday</span>
+                </button>
+
+                <button class="outfit-choice" data-style="street">
+                    <strong>Street</strong>
+                    <span>Modern streetwear</span>
+                </button>
+
+                <button class="outfit-choice" data-style="smart">
+                    <strong>Smart</strong>
+                    <span>Clean smart casual</span>
+                </button>
+
+            </div>
+
+
+            <button class="primary-button full-button" id="generateOutfit">
+                ✦ Generate outfit
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+     TOAST
+===================================================== -->
+
+    <div class="toast" id="toast"></div>
+
+</body>
+
+</html>
